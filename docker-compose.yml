@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  app:
+    image: wordpress
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: wordpress
+    ports:
+      - 80
+    depends_on:
+      - db
+    networks:
+      - my-network
+    restart: always
+
+  db:
+    restart: always
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - my-network
+    volumes:
+     - db:/data/db
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  my-network:
+    driver: overlay
