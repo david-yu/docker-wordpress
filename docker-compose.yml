@@ -9,8 +9,8 @@ services:
       - "constraint:nodeType==app"
     ports:
       - 80
-    depends_on:
-      - db
+    links:
+      - db:mysql
     networks:
       - my-network
     restart: always
