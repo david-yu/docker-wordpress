@@ -4,19 +4,18 @@ services:
   app:
     image: wordpress
     environment:
-      - "WORDPRESS_DB_HOST=db:3306"
+      - "WORDPRESS_DB_HOST=mysql:3306"
       - "WORDPRESS_DB_PASSWORD=wordpress"
       - "constraint:nodeType==app"
     ports:
       - 80
     links:
-      - db:mysql
+      - mariadb:mysql
     networks:
       - my-network
-    restart: always
+    restart: unless-stopped
 
-  db:
-    restart: always
+  mariadb:
     image: mariadb
     environment:
       - "MYSQL_ROOT_PASSWORD=wordpress"
@@ -28,6 +27,7 @@ services:
       - my-network
     volumes:
      - db:/data/db
+    restart: unless-stopped
 
 volumes:
   db:
