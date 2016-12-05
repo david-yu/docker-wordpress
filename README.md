@@ -15,7 +15,7 @@ CLI deploy:
 docker-compose up
 ```
 
-Docker 1.12 and DDC
+DDC and Docker 1.12
 -------------------
 CLI deploy:
 ```
