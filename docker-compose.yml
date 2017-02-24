@@ -4,7 +4,7 @@ services:
   app:
     image: wordpress
     deploy:
-      replicas: 1
+      replicas: 3
       placement:
         constraints:
           - node.labels.type == app
@@ -23,12 +23,14 @@ services:
     image: mariadb
     deploy:
       replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
     environment:
       - "MYSQL_ROOT_PASSWORD=wordpress"
       - "MYSQL_DATABASE=wordpress"
       - "MYSQL_USER=wordpress"
       - "MYSQL_PASSWORD=wordpress"
-      - "constraint:nodeType==app"
     networks:
       - wordpress-network
     volumes:
