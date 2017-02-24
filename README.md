@@ -6,7 +6,7 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 DDC and Docker 1.13
 -------------------
 
-### Deploy using Docker Compose File
+### Deploy using Docker Compose File using environment variables
 ```
 # Source client bundle
 cd ucp-bundle-admin
@@ -14,6 +14,16 @@ source env.sh
 
 # Deploy using Compose File
 docker stack deploy -c docker-compose.yml wordpress
+```
+
+### Deploy using Docker Compose File using Secrets (Recommended)
+```
+# Source client bundle
+cd ucp-bundle-admin
+source env.sh
+
+# Deploy using Compose File
+docker stack deploy -c docker-compose-secrets.yml wordpress
 ```
 
 ### Deploy using `docker service` commands
