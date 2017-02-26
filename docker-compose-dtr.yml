@@ -12,6 +12,7 @@ services:
         com.docker.ucp.mesh.http: "external_route=http://wordpress.local,internal_port=80"
     environment:
       - "WORDPRESS_DB_HOST=mariadb:3306"
+      - "WORDPRESS_DB_USER=wordpress" 
       - "WORDPRESS_DB_PASSWORD=wordpress"
     ports:
       - 80
