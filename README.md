@@ -3,7 +3,7 @@ Docker Wordpress Example
 
 A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 
-DDC and Docker 1.13
+Docker EE 17.03 Standard or Advanced
 -------------------
 
 ### Deploy using Docker Compose File using environment variables
@@ -45,6 +45,15 @@ v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a m
 
 # Deploy using Compose File
 $ docker stack deploy -c docker-compose-secrets.yml wordpress
+```
+
+### Docker CE 17.03
+
+Run Wordpress on your local engine before deploying on production (Docker EE)
+
+```
+# Deploy using Compose File
+$ docker stack deploy -c docker-compose-ce.yml wordpress
 ```
 
 ### Deploy using `docker service` commands
