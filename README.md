@@ -22,7 +22,10 @@ $ docker stack deploy -c docker-compose-no-secrets.yml wordpress
 $ cd ucp-bundle-admin
 $ source env.sh
 
-# Create Secrets
+# Create Secrets (via script)
+./create-secrets.sh
+
+# Create Secrets (Manually)
 
 $ echo "mysql-root-password-secret" | docker secret create MYSQL_ROOT_PASSWORD -
 shx8bnn6qkoqkqqans4pu1e8w
