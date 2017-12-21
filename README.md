@@ -6,7 +6,7 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 Docker EE 17.06 Standard or Advanced
 -------------------
 
-### Deploy using Docker Compose File without Secrets
+## Deploy using Docker Compose File without Secrets
 ```
 # Source client bundle
 cd ucp-bundle-admin
@@ -16,9 +16,9 @@ source env.sh
 docker stack deploy -c docker-compose-no-secrets.yml wordpress
 ```
 
-### Deploy using Docker Compose File using Secrets and Configurable Domain (Recommended)
+## Deploy using Docker Compose File using Secrets and Configurable Domain (Recommended)
 
-## Source client bundle
+### Source client bundle
 
 ```
 # Source client bundle
@@ -26,13 +26,13 @@ cd ucp-bundle-admin
 source env.sh
 ```
 
-## Create Secrets via Script
+### Create Secrets via Script
 
 ```
 ./scripts/create-secrets.sh
 ```
 
-## Create Secrets Manually
+### Create Secrets Manually
 
 ```
 echo "mysql-root-password-secret" | docker secret create MYSQL_ROOT_PASSWORD -
@@ -54,14 +54,14 @@ khoy0gkn334m4hapbmef12svj   MYSQL_DATABASE        50 seconds ago       50 second
 shx8bnn6qkoqkqqans4pu1e8w   MYSQL_ROOT_PASSWORD   About a minute ago   About a minute ago
 v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a minute ago
 ```
-## Deploy to Swarm using Compose File
+### Deploy to Swarm using Compose File
 
 ```
 export WORDPRESS_DOMAIN=wordpress.david.dtcntr.net
 docker stack deploy -c docker-compose-secrets-domain.yml wordpress
 ```
 
-### Deploy using Docker Compose File using Secrets
+## Deploy using Docker Compose File using Secrets
 ```
 # Source client bundle
 cd ucp-bundle-admin
@@ -101,22 +101,22 @@ Run Wordpress on your local engine before deploying on production (Docker EE)
 docker stack deploy -c docker-compose-ce.yml wordpress
 ```
 
-### Deploy using `docker service` commands
+## Deploy Wordpress using `docker service` commands
 
-## Source Client Bundle
+### Source Client Bundle
 
 ```
 cd ucp-bundle-admin
 source env.sh
 ```
 
-## Deploy Services via Script
+### Deploy Services via Script
 ```
 ./scripts/run-wordpress-service.sh
 ```
 
 
-## Deploy Services manually 
+### Deploy Services manually
 ```
 docker network create --driver overlay wordpress-network
 
