@@ -4,7 +4,6 @@ Docker Wordpress Example
 A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 
 ## Docker EE 17.06 Standard or Advanced
--------------------
 
 ### Deploy using Docker Compose File without Secrets
 ```
