@@ -6,14 +6,14 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 Docker EE 17.06 Standard or Advanced
 -------------------
 
-### Deploy using Docker Compose File using environment variables
+### Deploy using Docker Compose File without Secrets
 ```
 # Source client bundle
 $ cd ucp-bundle-admin
 $ source env.sh
 
 # Deploy using Compose File
-$ docker stack deploy -c docker-compose.yml wordpress
+$ docker stack deploy -c docker-compose-no-secrets.yml wordpress
 ```
 
 ### Deploy using Docker Compose File using Secrets and Configurable Domain (Recommended)
