@@ -5,11 +5,8 @@ services:
     image: dtr.david.dtcntr.net/engineering/wordpress
     deploy:
       replicas: 1
-      placement:
-        constraints:
-          - node.role == worker
       labels:
-        com.docker.ucp.mesh.http: "external_route=http://wordpress.local,internal_port=80"
+        com.docker.ucp.mesh.http: "external_route=http://wordpress.dtcntr.david.net,internal_port=80"
     environment:
       - "WORDPRESS_DB_HOST=mariadb:3306"
       - "WORDPRESS_DB_USER=wordpress"
