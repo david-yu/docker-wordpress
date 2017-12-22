@@ -11,7 +11,8 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 cd ucp-bundle-admin
 source env.sh
 
-# Deploy using Compose File, NOTE: modify com.docker.ucp.mesh.http label prior to deploying with correct domain name
+# Deploy using Compose File
+# NOTE: modify com.docker.ucp.mesh.http label prior to deploying with correct domain name
 docker stack deploy -c docker-compose-no-secrets.yml wordpress
 ```
 
@@ -88,6 +89,7 @@ shx8bnn6qkoqkqqans4pu1e8w   MYSQL_ROOT_PASSWORD   About a minute ago   About a m
 v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a minute ago
 
 # Deploy using Compose File
+# NOTE: modify com.docker.ucp.mesh.http label prior to deploying with correct domain name
 docker stack deploy -c docker-compose-secrets.yml wordpress
 ```
 
