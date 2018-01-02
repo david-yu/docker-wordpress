@@ -104,13 +104,6 @@ docker stack deploy -c docker-compose-ce.yml wordpress
 
 ### Deploy Wordpress using `docker service` commands
 
-#### Source Client Bundle
-
-```
-cd ucp-bundle-admin
-source env.sh
-```
-
 #### Deploy Services via Script
 ```
 ./scripts/run-wordpress-service.sh
