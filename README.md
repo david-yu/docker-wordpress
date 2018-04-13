@@ -108,7 +108,7 @@ shx8bnn6qkoqkqqans4pu1e8w   MYSQL_ROOT_PASSWORD   About a minute ago   About a m
 v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a minute ago
 
 # Deploy using Compose File
-# NOTE: modify com.docker.ucp.mesh.http label prior to deploying with correct domain name
+export WORDPRESS_DOMAIN=wordpress.david.dtcntr.net
 docker stack deploy -c docker-compose-secrets.yml wordpress
 ```
 
