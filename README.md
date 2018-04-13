@@ -10,6 +10,7 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 cd ucp-bundle-admin
 source env.sh
 
+# CD to folder with k8s yaml files
 kubectl apply -f mysql-demo.yaml
 kubectl apply -f wordpress-demo.yaml
 ```
@@ -23,7 +24,7 @@ cd ucp-bundle-admin
 source env.sh
 
 # Deploy using Compose File
-# NOTE: modify com.docker.ucp.mesh.http label prior to deploying with correct domain name
+export WORDPRESS_DOMAIN=wordpress.local
 docker stack deploy -c docker-compose-no-secrets.yml wordpress
 ```
 
