@@ -76,7 +76,8 @@ v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a m
 #### Deploy to Swarm using Compose File
 
 ```
-export WORDPRESS_DOMAIN=wordpress.david.dtcntr.net
+cd ~/docker-wordpress/swarm
+export WORDPRESS_DOMAIN=wordpress.local
 docker stack deploy -c docker-compose-secrets-domain.yml wordpress
 ```
 
@@ -108,7 +109,8 @@ shx8bnn6qkoqkqqans4pu1e8w   MYSQL_ROOT_PASSWORD   About a minute ago   About a m
 v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a minute ago
 
 # Deploy using Compose File
-export WORDPRESS_DOMAIN=wordpress.david.dtcntr.net
+cd ~/docker-wordpress/swarm
+export WORDPRESS_DOMAIN=wordpress.local
 docker stack deploy -c docker-compose-secrets.yml wordpress
 ```
 
@@ -118,6 +120,7 @@ Run Wordpress on your local engine before deploying on production (Docker EE)
 
 ```
 # Deploy using Compose File
+cd ~/docker-wordpress/swarm
 docker stack deploy -c docker-compose-ce.yml wordpress
 ```
 
