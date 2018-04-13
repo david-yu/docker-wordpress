@@ -10,9 +10,15 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 cd ucp-bundle-admin
 source env.sh
 
-# CD to folder with k8s yaml files
+# Deploy using k8s yaml file via CLI
+cd ~/docker-wordpress/k8s
 kubectl apply -f mysql-demo.yaml
 kubectl apply -f wordpress-demo.yaml
+
+# Destroy deployments
+kubectl delete -f mysql-demo.yaml
+kubectl delete -f wordpress-demo.yaml
+
 ```
 
 ## Swarm - Docker EE 2.0 Standard or Advanced
@@ -24,6 +30,7 @@ cd ucp-bundle-admin
 source env.sh
 
 # Deploy using Compose File
+cd ~/docker-wordpress/swarm
 export WORDPRESS_DOMAIN=wordpress.local
 docker stack deploy -c docker-compose-no-secrets.yml wordpress
 ```
