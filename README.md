@@ -3,6 +3,17 @@ Docker Wordpress Example
 
 A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 
+## Kubernetes - Docker EE 2.0 Standard or Advanced
+
+```
+# Source client bundle
+cd ucp-bundle-admin
+source env.sh
+
+kubectl apply -f mysql-demo.yaml
+kubectl apply -f wordpress-demo.yaml
+```
+
 ## Swarm - Docker EE 2.0 Standard or Advanced
 
 ### Deploy using Docker Compose File without Secrets
@@ -93,7 +104,7 @@ v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a m
 docker stack deploy -c docker-compose-secrets.yml wordpress
 ```
 
-## Swarm - Docker CE 
+## Swarm - Docker CE
 
 Run Wordpress on your local engine before deploying on production (Docker EE)
 
