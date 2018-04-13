@@ -3,7 +3,7 @@ Docker Wordpress Example
 
 A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 
-## Docker EE 17.06 Standard or Advanced
+## Swarm - Docker EE 2.0 Standard or Advanced
 
 ### Deploy using Docker Compose File without Secrets
 ```
@@ -93,7 +93,7 @@ v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a m
 docker stack deploy -c docker-compose-secrets.yml wordpress
 ```
 
-## Docker CE 17.06
+## Swarm - Docker CE 
 
 Run Wordpress on your local engine before deploying on production (Docker EE)
 
