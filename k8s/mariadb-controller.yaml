@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  labels:
+    name: mariadb
+  name: mariadb-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: mariadb
+    spec:
+      containers:
+      - image: mariadb
+        name: mariadb
+        ports:
+        - name: mariadb
+          containerPort: 3306
+          hostPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: mysqlrootpassword
+        - name: MYSQL_DATABASE
+          value: ghost
+        - name: MYSQL_USER
+          value: ghost_user
+        - name: MYSQL_PASSWORD
+          value: ghost_pass
+        volumeMounts:
+        - name: mysql-vol
+          mountPath: /var/lib/mysql
+        livenessProbe:
+          tcpSocket:
+            port: "mysql"
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+        readinessProbe:
+          exec:
+            command: ["mysqladmin", "status", "-pmysqlrootpassword"]
+  volumes:
+    - name: mysql-vol
+      hostPath:
+        path: /var/lib/mysql
