@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: wordpress
   labels:
-    name: mariadb
-  name: mariadb
+    app: wordpress
 spec:
   ports:
-    - port: 3306
-      targetPort: 3306
+    - port: 80
   selector:
-    name: mariadb
+    app: wordpress
+    tier: frontend
+  type: LoadBalancer
