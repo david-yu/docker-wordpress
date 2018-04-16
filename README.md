@@ -10,7 +10,7 @@ A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
 cd ucp-bundle-admin
 source env.sh
 
-# Create Kubernetes mysql secret
+# Create MySQL root password as Kubernetes secret
 kubectl create secret generic mysql-root-password -n default --from-literal="password=wordpress"
 
 # OPTIONAL: Verify secret is encrypted on disk on UCP manager node
