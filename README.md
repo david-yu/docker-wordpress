@@ -12,8 +12,11 @@ source env.sh
 
 # Create Kubernetes mysql secret
 kubectl create secret generic mysql-root-password -n default --from-literal="password=wordpress"
+
 # OPTIONAL: Verify secret is encrypted on disk on UCP manager node
-docker exec -it -e ETCDCTL_API=3 ucp-kv etcdctl --endpoints https://127.0.0.1:2379 --cacert /etc/docker/ssl/ca.pem --cert /etc/docker/ssl/cert.pem --key /etc/docker/ssl/key.pem get /registry/secrets/default/mysql-root-password
+docker exec -it -e ETCDCTL_API=3 ucp-kv etcdctl --endpoints https://127.0.0.1:2379 \
+  --cacert /etc/docker/ssl/ca.pem --cert /etc/docker/ssl/cert.pem \
+  --key /etc/docker/ssl/key.pem get /registry/secrets/default/mysql-root-password
 
 # Deploy using k8s yaml file via CLI
 cd ~/docker-wordpress/k8s
@@ -26,18 +29,6 @@ kubectl delete -f wordpress-demo.yaml
 ```
 
 ## Swarm - Docker EE 2.0 Standard or Advanced
-
-### Deploy using Docker Compose File without Secrets
-```
-# Source client bundle
-cd ucp-bundle-admin
-source env.sh
-
-# Deploy using Compose File
-cd ~/docker-wordpress/swarm
-export WORDPRESS_DOMAIN=wordpress.local
-docker stack deploy -c docker-compose-no-secrets.yml wordpress
-```
 
 ### Deploy using Docker Compose File using Secrets
 ```
@@ -73,6 +64,18 @@ v2mz2i9ei5g9i3zv7cpy1o9am   MYSQL_USER            About a minute ago   About a m
 cd ~/docker-wordpress/swarm
 export WORDPRESS_DOMAIN=wordpress.local
 docker stack deploy -c docker-compose-secrets.yml wordpress
+```
+
+### Deploy using Docker Compose File without Secrets
+```
+# Source client bundle
+cd ucp-bundle-admin
+source env.sh
+
+# Deploy using Compose File
+cd ~/docker-wordpress/swarm
+export WORDPRESS_DOMAIN=wordpress.local
+docker stack deploy -c docker-compose-no-secrets.yml wordpress
 ```
 
 ## Swarm - Docker CE
