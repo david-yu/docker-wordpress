@@ -30,7 +30,7 @@ kubectl delete -f wordpress-demo.yaml
 
 ## Swarm - Docker EE 2.0 Standard or Advanced
 
-### Deploy using Docker Compose File using Secrets
+### Deploy using Docker Compose File using Secrets (Recommended)
 ```
 # Source client bundle
 cd ucp-bundle-admin
@@ -50,7 +50,7 @@ v2mz2i9ei5g9i3zv7cpy1o9am
 echo "wordpress" | docker secret create MYSQL_DATABASE -
 khoy0gkn334m4hapbmef12svj
 
-# OR use script to generate Secrets
+# OR use a script to generate Secrets
 ./scripts/create-secrets.sh
 
 docker secret ls
