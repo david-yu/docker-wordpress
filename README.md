@@ -80,6 +80,8 @@ docker stack deploy -c docker-compose-no-secrets.yml wordpress
 
 ## Swarm - Docker CE
 
+### Deploy Wordpress using `docker stack` command with a Compose file
+
 Run Wordpress on your local engine before deploying on production (Docker EE)
 
 ```
