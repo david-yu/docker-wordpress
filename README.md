@@ -1,7 +1,7 @@
 Docker Wordpress Example
 =====================
 
-A Wordpress example that can deploy on Docker Datacenter through the UI or CLI
+A Wordpress and MySQL example that can deploy on Docker EE through the UI or CLI for both Swarm and Kubernetes orchestration.
 
 ## Kubernetes - Docker EE 2.0 Standard or Advanced
 
